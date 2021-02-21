@@ -1,17 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
 	// Config
-	[SerializeField] float runSpeed = 5f;
-	[SerializeField] float jumpForce = 10f;
-	[SerializeField] float climbSpeed = 10f;
+	[SerializeField] float runSpeed = 12f;
+	[SerializeField] float jumpForce = 40f;
+	[SerializeField] float climbSpeed = 12f;
 	
 	float gravityScaleAtStart;
 	bool wasOnGround;
 
 	// States
-	//bool isAlive = true;
+	bool isAlive = true;
 
 	// Caches and references
 	Rigidbody2D myRigidbody2D;
@@ -26,6 +28,9 @@ public class Player : MonoBehaviour {
 
 	// Messages then Methods
 	void Start() {
+
+		//if (!isAlive) {return;}
+
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
 		myBodyCollider = GetComponent<BoxCollider2D>();
@@ -38,15 +43,21 @@ public class Player : MonoBehaviour {
 		Run();
 		Climb();
 		Jump();
+		Crouch();
 		FlipPlayerSprite();
 		MakeImpactEffect();
+		//Die();
+
+		print(myRigidbody2D.velocity);
 	}
 
 	void Run() {
 		float moveX = Input.GetAxisRaw("Horizontal");
 		myRigidbody2D.velocity = new Vector2(moveX * runSpeed, myRigidbody2D.velocity.y);
+
 		bool hasHorizontalSpeed = Mathf.Abs(myRigidbody2D.velocity.x) > Mathf.Epsilon; // means > 0
 		myAnimator.SetBool("isRunning", hasHorizontalSpeed);
+
 		MakeFootstepDust(moveX);
 	}
 
@@ -58,8 +69,12 @@ public class Player : MonoBehaviour {
 			return; 
 		}
 
-		float moveY = Input.GetAxisRaw("Vertical");
-		myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, moveY * climbSpeed);
+		//float moveY = Input.GetAxisRaw("Vertical");
+		//myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, moveY * climbSpeed);
+		//myRigidbody2D.gravityScale = 0f;
+
+		float moveYUp = Input.GetAxisRaw("VerticalOnlyUp");
+		myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, moveYUp * climbSpeed);
 		myRigidbody2D.gravityScale = 0f;
 
 		bool hasVerticalSpeed = Mathf.Abs(myRigidbody2D.velocity.y) > Mathf.Epsilon; // means > 0
@@ -79,10 +94,28 @@ public class Player : MonoBehaviour {
 		}
 
 		myAnimator.SetBool("isJumping", false);
-		//float jumpVelocityNormalized = Mathf.Sine(myRigidbody2D.velocity.y); // returns 1 or -1
-		//myAnimator.SetFloat("JumpVelocity", jumpVelocityNormalized);
 	}
 
+	void Crouch() {
+		if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+			myAnimator.SetBool("isRunning", false);
+			myAnimator.SetBool("isCrouching", true);
+			myRigidbody2D.velocity = Vector2.zero;
+		}
+		if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) {
+			myAnimator.SetBool("isCrouching", false);
+		}
+	}
+
+	void Die() {
+		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
+			isAlive = false;
+			// play dieAnimation
+			//myRigidbody2D.velocity = new Vector2(-1f, 50f);
+			//myAnimator.SetTrigger("Dead");
+			StartCoroutine(DieDelay(2)); // wait 2 seconds then reload scene
+		}
+	}
 
 	void FlipPlayerSprite() {
 		bool hasHorizontalSpeed = Mathf.Abs(myRigidbody2D.velocity.x) > Mathf.Epsilon; // means > 0
@@ -111,5 +144,10 @@ public class Player : MonoBehaviour {
 		}
 
 		wasOnGround = isGrounded;
+	}
+
+	IEnumerator DieDelay(int seconds) {
+		yield return new WaitForSeconds(seconds);
+		SceneManager.LoadScene(0);
 	}
 }

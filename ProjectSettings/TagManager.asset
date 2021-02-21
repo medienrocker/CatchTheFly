@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - End
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -20,10 +22,10 @@ TagManager:
   - Collectables
   - Player
   - Background
-  - 
-  - 
-  - 
-  - 
+  - Enemy Bindings
+  - Player Bindings
+  - Forground
+  - Food
   - 
   - 
   - 
@@ -56,6 +58,9 @@ TagManager:
     locked: 0
   - name: Collectables
     uniqueID: 4196863915
+    locked: 0
+  - name: Food
+    uniqueID: 1078531219
     locked: 0
   - name: Foreground
     uniqueID: 1591803411
