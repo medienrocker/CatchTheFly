@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5131647284673284723}
   - component: {fileID: 5409780720759204099}
   m_Layer: 17
-  m_Name: Fly Explosion
+  m_Name: Butterfly Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,23 +1362,23 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.44705883, g: 0.7529412, b: 0, a: 1}
-        key1: {r: 1, g: 0.98160696, b: 0.0047169924, a: 0}
+        key0: {r: 0.6509434, g: 0.003070495, b: 0.61045134, a: 1}
+        key1: {r: 0.90635514, g: 0.4009434, b: 1, a: 0}
         key2: {r: 1, g: 1, b: 1, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 23901
+        ctime0: 27563
         ctime1: 43369
-        ctime2: 65535
-        ctime3: 0
+        ctime2: 54356
+        ctime3: 65535
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 46067
+        atime0: 57054
         atime1: 65535
         atime2: 65535
         atime3: 0
@@ -1387,7 +1387,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 4
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2

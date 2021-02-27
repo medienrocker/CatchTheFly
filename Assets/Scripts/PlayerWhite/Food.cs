@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class Food : MonoBehaviour {
 
@@ -11,6 +8,17 @@ public class Food : MonoBehaviour {
 	void Update() {
 
 	}
+	//void OnTriggerEnter2D(Collider2D other) {
+
+	//	if (other.gameObject.tag == "Player") {
+	//		Instantiate(foodExplosion, transform.position, Quaternion.identity);
+	//		transform.position = startPoint.transform.position;
+	//	}
+	//	if (other.gameObject.tag == "End") {
+	//		transform.position = startPoint.transform.position;
+	//	}
+	//}
+
 	void OnCollisionEnter2D(Collision2D other) {
 
 		if (other.gameObject.tag == "Player") {

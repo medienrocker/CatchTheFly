@@ -8,7 +8,8 @@ public class Player : MonoBehaviour {
 	[SerializeField] float runSpeed = 12f;
 	[SerializeField] float jumpForce = 40f;
 	[SerializeField] float climbSpeed = 12f;
-	
+
+	public float jumpMultiplier = 1f;
 	float gravityScaleAtStart;
 	bool wasOnGround;
 
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour {
 	// Caches and references
 	Rigidbody2D myRigidbody2D;
 	Animator myAnimator;
+	SpriteRenderer mySpriteRenderer;
 	[SerializeField] BoxCollider2D myBodyCollider;
 	[SerializeField] BoxCollider2D myFeetCollider;
 
@@ -25,15 +27,18 @@ public class Player : MonoBehaviour {
 	ParticleSystem.EmissionModule footstepsEmission;
 
 	[SerializeField] ParticleSystem impactEffect;
+	[SerializeField] ParticleSystem dieEffect;
+	[SerializeField] Vector2 deathKick = new Vector2(25, 50);
 
 	// Messages then Methods
 	void Start() {
-
-		//if (!isAlive) {return;}
+		//isAlive = true;
+		if (!isAlive) {return;}
 
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
 		myBodyCollider = GetComponent<BoxCollider2D>();
+		mySpriteRenderer = GetComponent<SpriteRenderer>();
 		gravityScaleAtStart = myRigidbody2D.gravityScale;
 
 		footstepsEmission = footsteps.emission;
@@ -46,9 +51,7 @@ public class Player : MonoBehaviour {
 		Crouch();
 		FlipPlayerSprite();
 		MakeImpactEffect();
-		//Die();
-
-		print(myRigidbody2D.velocity);
+		Die();
 	}
 
 	void Run() {
@@ -89,7 +92,7 @@ public class Player : MonoBehaviour {
 		}
 
 		if (Input.GetButtonDown("Jump")) {
-			Vector2 jumpVelocityToAdd = new Vector2(0f, jumpForce);
+			Vector2 jumpVelocityToAdd = new Vector2(0f, jumpForce * jumpMultiplier);
 			myRigidbody2D.velocity += jumpVelocityToAdd;
 		}
 
@@ -110,11 +113,19 @@ public class Player : MonoBehaviour {
 	void Die() {
 		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
 			isAlive = false;
-			// play dieAnimation
-			//myRigidbody2D.velocity = new Vector2(-1f, 50f);
-			//myAnimator.SetTrigger("Dead");
-			StartCoroutine(DieDelay(2)); // wait 2 seconds then reload scene
+			myAnimator.SetTrigger("Die");
+			GetComponent<Rigidbody2D>().velocity = deathKick;
+			StartCoroutine(DieDelay(.5f,2f)); // wait 2 seconds then reload scene
 		}
+	}
+
+	IEnumerator DieDelay(float secondsToExplode, float secondsToReload) {
+		yield return new WaitForSeconds(secondsToExplode);
+		Instantiate(dieEffect, transform.position, Quaternion.Euler(0,0,180));
+		mySpriteRenderer.enabled = false;
+		myRigidbody2D.isKinematic = true;
+		yield return new WaitForSeconds(secondsToReload);
+		SceneManager.LoadScene(0);
 	}
 
 	void FlipPlayerSprite() {
@@ -146,8 +157,4 @@ public class Player : MonoBehaviour {
 		wasOnGround = isGrounded;
 	}
 
-	IEnumerator DieDelay(int seconds) {
-		yield return new WaitForSeconds(seconds);
-		SceneManager.LoadScene(0);
-	}
 }

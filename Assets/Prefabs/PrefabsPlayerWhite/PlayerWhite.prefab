@@ -166,7 +166,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011729419, y: -0.8692938}
@@ -197,10 +197,14 @@ MonoBehaviour:
   runSpeed: 12
   jumpForce: 40
   climbSpeed: 12
+  jumpMultiplier: 1
   myBodyCollider: {fileID: 8536762367902514636}
   myFeetCollider: {fileID: 2141383113}
   footsteps: {fileID: 5163779893671555865}
   impactEffect: {fileID: 4631697966391358561}
+  dieEffect: {fileID: 8042892580568621076, guid: 64bf80f5ff9a6ca44b973330be865b97,
+    type: 3}
+  deathKick: {x: 50, y: 50}
 --- !u!1 &8536762368118009915
 GameObject:
   m_ObjectHideFlags: 0
