@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6059056823111738770}
   - component: {fileID: 6059056823111738771}
   - component: {fileID: 6059056823111738772}
+  - component: {fileID: 5622871378790453565}
   m_Layer: 17
-  m_Name: PowerUp_DoubbleJump
+  m_Name: PowerUp_HighJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,10 +113,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.5
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.1
+  m_GravityScale: 0.01
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -147,3 +148,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7324311, y: 0.6073942}
   m_EdgeRadius: 0
+--- !u!114 &5622871378790453565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059056823111738769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f97dbc4e3231884ea685565e5e6b72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 10

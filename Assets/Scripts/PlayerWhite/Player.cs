@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour {
 	Rigidbody2D myRigidbody2D;
 	Animator myAnimator;
 	SpriteRenderer mySpriteRenderer;
+
 	[SerializeField] BoxCollider2D myBodyCollider;
 	[SerializeField] BoxCollider2D myFeetCollider;
 
@@ -30,6 +32,10 @@ public class Player : MonoBehaviour {
 	[SerializeField] ParticleSystem dieEffect;
 	[SerializeField] Vector2 deathKick = new Vector2(25, 50);
 
+	Color originalSpriteColor;
+
+	public bool isHighJumping;
+
 	// Messages then Methods
 	void Start() {
 		//isAlive = true;
@@ -39,6 +45,9 @@ public class Player : MonoBehaviour {
 		myAnimator = GetComponent<Animator>();
 		myBodyCollider = GetComponent<BoxCollider2D>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
+
+		originalSpriteColor = mySpriteRenderer.color;
+
 		gravityScaleAtStart = myRigidbody2D.gravityScale;
 
 		footstepsEmission = footsteps.emission;
@@ -51,7 +60,20 @@ public class Player : MonoBehaviour {
 		Crouch();
 		FlipPlayerSprite();
 		MakeImpactEffect();
-		Die();
+		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
+			Die();
+		}
+
+		ChangeColor();
+	}
+
+	void ChangeColor() {
+		if (isHighJumping) {
+			mySpriteRenderer.color = Color.blue;
+		}
+		else {
+			mySpriteRenderer.color = originalSpriteColor;
+		}
 	}
 
 	void Run() {
@@ -110,13 +132,11 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void Die() {
-		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
+	public void Die() {
 			isAlive = false;
 			myAnimator.SetTrigger("Die");
 			GetComponent<Rigidbody2D>().velocity = deathKick;
-			StartCoroutine(DieDelay(.5f,2f)); // wait 2 seconds then reload scene
-		}
+			StartCoroutine(DieDelay(.5f,2f)); // wait .5 sec to explode and 2 seconds to reload scene
 	}
 
 	IEnumerator DieDelay(float secondsToExplode, float secondsToReload) {

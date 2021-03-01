@@ -2,7 +2,7 @@
 
 public class PlayerHealthManager : MonoBehaviour {
 
-	public int maxHealth;
+	public int maxHealth = 50;
 	public int currentHealth;
 
 	public bool isFlashing;
@@ -22,7 +22,8 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	void Update() {
 		if (currentHealth <= 0) {
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			GetComponent<Player>().Die();
 		}
 
 		if (isFlashing) {

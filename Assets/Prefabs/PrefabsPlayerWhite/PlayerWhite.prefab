@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8536762367902514635}
   - component: {fileID: 2141383113}
   - component: {fileID: 8536762367902514637}
+  - component: {fileID: 5896994457172376007}
   m_Layer: 12
   m_Name: PlayerWhite
   m_TagString: Player
@@ -205,6 +206,23 @@ MonoBehaviour:
   dieEffect: {fileID: 8042892580568621076, guid: 64bf80f5ff9a6ca44b973330be865b97,
     type: 3}
   deathKick: {x: 50, y: 50}
+  powerUp: {fileID: 6059056823111738770, guid: d93f24a5721c4dd45987f8d27cd164a2, type: 3}
+--- !u!114 &5896994457172376007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8536762367902514631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543628e59dca39c4abf8c3bafd4de76e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
+  isFlashing: 0
+  flashLength: 0.2
 --- !u!1 &8536762368118009915
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,10 @@ public class PowerUp : MonoBehaviour {
 	[SerializeField] GameObject pickupEffect;
 	[SerializeField] float powerupTime = 3f;
 
+
+	void Start() {
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
 			StartCoroutine(PickUp(other));
@@ -15,13 +19,16 @@ public class PowerUp : MonoBehaviour {
 
 	IEnumerator PickUp(Collider2D player) {
 		Instantiate(pickupEffect, transform.position, transform.rotation);
-		player.gameObject.GetComponent<Player>().jumpMultiplier *= multiplier;
+		player.GetComponent<Player>().jumpMultiplier =1f;
+		player.GetComponent<Player>().jumpMultiplier *= multiplier;
+		player.GetComponent<Player>().isHighJumping = true;
 
 		GetComponent<Collider2D>().enabled = false;
 		GetComponent<Renderer>().enabled = false;
 
 		yield return new WaitForSeconds(powerupTime);
 		player.gameObject.GetComponent<Player>().jumpMultiplier /= multiplier;
+		player.GetComponent<Player>().isHighJumping = false;
 		Destroy(gameObject);
 	}
 
