@@ -60,9 +60,9 @@ public class Player : MonoBehaviour {
 		Crouch();
 		FlipPlayerSprite();
 		MakeImpactEffect();
-		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
-			Die();
-		}
+		//if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
+		//	Die();
+		//}
 
 		ChangeColor();
 	}

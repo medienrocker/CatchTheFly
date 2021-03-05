@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 1201816733533777582}
   - component: {fileID: 1201816733533777583}
   - component: {fileID: 890773315834592710}
+  - component: {fileID: 827550059483951128}
+  - component: {fileID: 1177228240429582584}
   m_Layer: 10
-  m_Name: Bee
+  m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201816733533777581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.64, y: 1.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 23.654, y: 1.463, z: 0}
+  m_LocalScale: {x: 0.7123784, y: 0.7123784, z: 0.7123784}
   m_Children: []
   m_Father: {fileID: 372840752640331884}
   m_RootOrder: 0
@@ -73,8 +75,9 @@ SpriteRenderer:
   m_SortingLayerID: -662613185
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: feba93c3a179d4048a5492e7f7f89913, type: 3}
-  m_Color: {r: 1, g: 0.65579164, b: 0, a: 1}
+  m_Sprite: {fileID: 7724322136296903931, guid: b89fc73e161be4c428152af992b5b279,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +104,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.605, y: 1.935}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -109,12 +112,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.010112762, y: 0.34830433}
-      - {x: -0.3015449, y: 0.19943486}
-      - {x: -0.31165764, y: -0.14886966}
-      - {x: 0.0101147145, y: -0.33819133}
-      - {x: 0.29143023, y: -0.15898265}
-      - {x: 0.28131557, y: 0.19943504}
+    - - {x: -0.0021915436, y: 0.22942156}
+      - {x: -0.24609447, y: 0.009222135}
+      - {x: -0.46216843, y: -0.014135629}
+      - {x: 0.11309628, y: 0.026382923}
+      - {x: 0.45778537, y: 0.023304567}
+      - {x: 0.4872768, y: 0.2311372}
 --- !u!114 &1201816733533777583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,9 +143,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f194054208e82c042a512f74ce863410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 10
   startPoint: {fileID: 9047441050118040709}
   contactExplosion: {fileID: 5131647284673284733, guid: e2b1ae52e202bfa458040f8851070b70,
     type: 3}
+  bloodSplashes:
+  - {fileID: 8935258452009492938, guid: f4ef4d4c5043d334a8c4203c42d4644f, type: 3}
+  - {fileID: 5180340673053622614, guid: 815d3c8c3c71c2f4995ef84a623cc56d, type: 3}
+  - {fileID: 4377252086245730677, guid: 7f3ce31624c13584fa026581c2652b91, type: 3}
+  - {fileID: 640864881950789482, guid: bd11554900cbef1459fdf285e2066f87, type: 3}
+  - {fileID: 918471210463538679, guid: f97d94d8d4d21464095a9f20e8b967e8, type: 3}
+  hurtEnemyCollider: {fileID: 827550059483951128}
+--- !u!68 &827550059483951128
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201816733533777581}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.30196, y: -0.23776579}
+  - {x: 0.460392, y: -0.23776579}
+--- !u!251 &1177228240429582584
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201816733533777581}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_RotationalOffset: 180
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 152.5
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 0
 --- !u!1 &5654093272115706500
 GameObject:
   m_ObjectHideFlags: 0
