@@ -2,8 +2,9 @@
 
 public class Food : MonoBehaviour {
 
-	[SerializeField] Transform startPoint;
+	//[SerializeField] Transform startPoint;
 	[SerializeField] GameObject foodExplosion;
+	[SerializeField] GameObject[] bloodSplashes;
 
 	RipplePostProcessor camRipple;
 
@@ -14,26 +15,26 @@ public class Food : MonoBehaviour {
 	void Update() {
 
 	}
-	void OnTriggerEnter2D(Collider2D other) {
 
-		if (other.tag == "Player") {
-			Instantiate(foodExplosion, transform.position, Quaternion.identity);
-			camRipple.RippleEffect();
-			transform.position = startPoint.transform.position;
-		}
-		if (other.tag == "End") {
-			transform.position = startPoint.transform.position;
-		}
+	void OnTriggerEnter2D(Collider2D collider) {
+		ProcessCollision(collider.gameObject);
 	}
 
-	//void OnCollisionEnter2D(Collision2D other) {
+	void OnCollisionEnter2D(Collision2D collision) {
+		ProcessCollision(collision.gameObject);
+	}
 
-	//	if (other.gameObject.tag == "Player") {
-	//		Instantiate(foodExplosion, transform.position, Quaternion.identity);
-	//		transform.position = startPoint.transform.position;
-	//	}
-	//	if (other.gameObject.tag == "End") {
-	//		transform.position = startPoint.transform.position;
-	//	}
-	//}
+	void ProcessCollision(GameObject collision) {
+		if (collision.gameObject.tag == "Player") {
+			Instantiate(foodExplosion, transform.position, Quaternion.identity);
+			Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length)], transform.position, Quaternion.identity);
+			camRipple.RippleEffect();
+			//transform.position = startPoint.transform.position;
+			Destroy(gameObject);
+		}
+		if (collision.gameObject.tag == "End") {
+			//transform.position = startPoint.transform.position;
+			Destroy(gameObject);
+		}
+	}
 }

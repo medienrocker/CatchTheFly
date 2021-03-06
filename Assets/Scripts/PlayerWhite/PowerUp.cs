@@ -13,13 +13,13 @@ public class PowerUp : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
+			other.GetComponent<Player>().jumpMultiplier = 1f;
 			StartCoroutine(PickUp(other));
 		}
 	}
 
 	IEnumerator PickUp(Collider2D player) {
 		Instantiate(pickupEffect, transform.position, transform.rotation);
-		player.GetComponent<Player>().jumpMultiplier =1f;
 		player.GetComponent<Player>().jumpMultiplier *= multiplier;
 		player.GetComponent<Player>().isHighJumping = true;
 

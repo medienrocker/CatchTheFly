@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: cf9dded1476e91445bdfe1800fdc46f2
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5342292896336844032
+    second: CathTheFly-GameIcons01_0
+  - first:
+      213: -7525373433217490554
+    second: CathTheFly-GameIcons01_1
+  - first:
+      213: -4307676627679529130
+    second: CathTheFly-GameIcons01_2
+  - first:
+      213: 6655526429897423618
+    second: CathTheFly-GameIcons01_3
+  - first:
+      213: -3938964611246301638
+    second: CathTheFly-GameIcons01_4
+  - first:
+      213: -7598949222151650478
+    second: CathTheFly-GameIcons01_5
+  - first:
+      213: -6134155482628143825
+    second: CathTheFly-GameIcons01_6
+  - first:
+      213: 6640324777145235549
+    second: CathTheFly-GameIcons01_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +133,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1087
+        width: 310
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0051044a513a32a40800000000000000
+      internalID: 5342292896336844032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_1
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 1106
+        width: 271
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681e8eecbb0809790800000000000000
+      internalID: -7525373433217490554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_2
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 959
+        width: 626
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657b8ef1eee0834c0800000000000000
+      internalID: -4307676627679529130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 624
+        width: 335
+        height: 381
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b7247860e2d5c50800000000000000
+      internalID: 6655526429897423618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_4
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 641
+        width: 305
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e54db3e8cf559c0800000000000000
+      internalID: -3938964611246301638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_5
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 508
+        width: 375
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2538b6381fb1b8690800000000000000
+      internalID: -7598949222151650478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 76
+        width: 360
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f254fe4b61a1fdaa0800000000000000
+      internalID: -6134155482628143825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CathTheFly-GameIcons01_7
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 102
+        width: 136
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5877fee33c272c50800000000000000
+      internalID: 6640324777145235549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
