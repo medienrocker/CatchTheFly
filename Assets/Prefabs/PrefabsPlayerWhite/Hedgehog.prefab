@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8064944342435902604}
   - component: {fileID: 4215893547627534171}
   - component: {fileID: 2768164252490954435}
-  - component: {fileID: 4780739717839640386}
   m_Layer: 10
   m_Name: Body
   m_TagString: Enemy
@@ -166,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.21416044}
+  m_Offset: {x: 0, y: -0.26116514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -177,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5088081, y: 0.5766791}
+  m_Size: {x: 1.5088081, y: 0.4826697}
   m_EdgeRadius: 0
 --- !u!70 &2768164252490954435
 CapsuleCollider2D:
@@ -192,27 +191,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17049019, y: 0.2645195}
-  m_Size: {x: 1.0529673, y: 0.25657764}
+  m_Offset: {x: 0.061514232, y: 0.21474983}
+  m_Size: {x: 1.2709229, y: 0.35611704}
   m_Direction: 1
---- !u!50 &4780739717839640386
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7406618038988915101}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4

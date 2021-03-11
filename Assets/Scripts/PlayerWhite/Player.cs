@@ -56,6 +56,9 @@ public class Player : MonoBehaviour {
 	void Update() {
 		Run();
 		Climb();
+		if (jumpMultiplier < 1f) {
+			jumpMultiplier = 1f;
+		}
 		Jump();
 		Crouch();
 		FlipPlayerSprite();

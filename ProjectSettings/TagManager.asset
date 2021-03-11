@@ -8,6 +8,7 @@ TagManager:
   - End
   - Food
   - PowerUp
+  - Climbing
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
     locked: 0
   - name: Climbing
     uniqueID: 1591529613
+    locked: 0
+  - name: Blood splashes
+    uniqueID: 3783399021
     locked: 0
   - name: Player
     uniqueID: 3914758875

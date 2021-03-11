@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour {
 
 	void Update() {
 		if (enemyHealth <= 0) {
-			Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length)], transform.position, Quaternion.identity);
+			Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length - 1)], transform.position, Quaternion.identity);
 			Instantiate(contactExplosion, transform.position, Quaternion.identity);
 			camRipple.RippleEffect();
 			//transform.position = startPoint.transform.position;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
 		if (hurtPlayerCollider.IsTouchingLayers(LayerMask.GetMask("Player"))) {
 			//Instantiate(contactExplosion, transform.position, Quaternion.identity); // should be hurtPlayerEffect = to Do!!
 			//camRipple.RippleEffect();
-			transform.position = new Vector3(transform.position.x + 3f, transform.position.y, transform.position.z);
+			transform.position = new Vector3(transform.position.x + 2f, transform.position.y, transform.position.z);
 			Debug.Log("Hit Player!");
 		}
 		else if (hurtEnemyCollider.IsTouchingLayers(LayerMask.GetMask("Player"))) {

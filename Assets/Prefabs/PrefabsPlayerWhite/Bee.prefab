@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3664348525351202944}
   - component: {fileID: 3326891281163609065}
   - component: {fileID: 5852739031454826100}
-  - component: {fileID: 5989375849319492321}
   - component: {fileID: 6182507433425904050}
   m_Layer: 10
   m_Name: Body
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -662613185
   m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7724322136296903931, guid: b89fc73e161be4c428152af992b5b279,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,27 +138,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.18658003, y: -0.4525417}
   m_Size: {x: 1.4539536, y: 0.1713775}
   m_Direction: 1
---- !u!50 &5989375849319492321
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3664348525351202946}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!60 &6182507433425904050
 PolygonCollider2D:
   m_ObjectHideFlags: 0
