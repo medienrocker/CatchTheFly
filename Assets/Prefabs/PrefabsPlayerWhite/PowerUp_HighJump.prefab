@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5725905648363141172}
   - component: {fileID: 6059056823111738770}
   - component: {fileID: 4782764490168162323}
-  - component: {fileID: 5809493316743111099}
   - component: {fileID: 7906330968287782532}
   m_Layer: 17
   m_Name: PowerUp_HighJump
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -98103381
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 5bb697bfc18341b49bdc9e4a464d53f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -117,19 +116,6 @@ CircleCollider2D:
   m_Offset: {x: 0.09, y: 0.03}
   serializedVersion: 2
   m_Radius: 2.03
---- !u!114 &5809493316743111099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6059056823111738769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f97dbc4e3231884ea685565e5e6b72e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToDestroy: 7
 --- !u!50 &7906330968287782532
 Rigidbody2D:
   serializedVersion: 4
