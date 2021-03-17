@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
 
 	// States
 	bool isAlive = true;
+	public bool isHighJumping;
+	bool isJumping;
 
 	// Caches and references
 	Rigidbody2D myRigidbody2D;
@@ -34,7 +36,6 @@ public class Player : MonoBehaviour {
 
 	Color originalSpriteColor;
 
-	public bool isHighJumping;
 
 	// Messages then Methods
 	void Start() {
@@ -111,7 +112,8 @@ public class Player : MonoBehaviour {
 
 	void Jump() {
 		if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Climbing"))) {
-			myAnimator.SetBool("isJumping", true);
+			isJumping = true;
+			myAnimator.SetBool("isJumping", isJumping);
 			myAnimator.SetBool("isRunning", false);
 			return; 
 		}
@@ -120,16 +122,19 @@ public class Player : MonoBehaviour {
 			Vector2 jumpVelocityToAdd = new Vector2(0f, jumpForce * jumpMultiplier);
 			myRigidbody2D.velocity += jumpVelocityToAdd;
 		}
-
-		myAnimator.SetBool("isJumping", false);
+		isJumping = false;
+		myAnimator.SetBool("isJumping", isJumping);
 	}
 
 	void Crouch() {
-		if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
-			myAnimator.SetBool("isRunning", false);
-			myAnimator.SetBool("isCrouching", true);
-			myRigidbody2D.velocity = Vector2.zero;
+		if (!Input.GetButtonDown("Jump") && !isJumping) {
+			if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+				myAnimator.SetBool("isRunning", false);
+				myAnimator.SetBool("isCrouching", true);
+				myRigidbody2D.velocity = Vector2.zero;
+			}
 		}
+
 		if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) {
 			myAnimator.SetBool("isCrouching", false);
 		}
@@ -171,6 +176,7 @@ public class Player : MonoBehaviour {
 	void MakeImpactEffect() {
 		bool isGrounded = myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Climbing"));
 		if (!wasOnGround && isGrounded) {
+			myAnimator.SetTrigger("Landing");
 			impactEffect.gameObject.SetActive(true);
 			impactEffect.Stop();
 			//impactEffect.transform.position = transform.position;

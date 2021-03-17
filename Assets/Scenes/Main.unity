@@ -665,6 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248917701}
+  - component: {fileID: 248917702}
   m_Layer: 0
   m_Name: Mountains 01 snow
   m_TagString: Untagged
@@ -684,11 +685,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1117155376}
-  - {fileID: 1145712056}
-  - {fileID: 2096908219}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &248917702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248917700}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.8
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &296494956
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +792,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 326877204}
+  - component: {fileID: 326877205}
   m_Layer: 0
   m_Name: Mountains 04
   m_TagString: Untagged
@@ -798,11 +812,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416673665}
-  - {fileID: 1715252288}
-  - {fileID: 556072844}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326877205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326877203}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.4
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &362610752
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362610753}
+  - component: {fileID: 362610754}
   m_Layer: 0
   m_Name: Foreground black
   m_TagString: Untagged
@@ -831,11 +858,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1682126577}
-  - {fileID: 1758465873}
-  - {fileID: 2099762419}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &362610754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362610752}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: -0.1
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &416673664
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 416673665}
   - component: {fileID: 416673666}
+  - component: {fileID: 416673667}
   m_Layer: 0
   m_Name: Mountain 04 L
   m_TagString: Untagged
@@ -863,7 +903,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -28.9, y: -4.8873124, z: 0.19226563}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1715252288}
+  - {fileID: 556072844}
   m_Father: {fileID: 326877204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -917,6 +959,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &416673667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416673664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.3
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &451563719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493903988}
+  - component: {fileID: 493903989}
   m_Layer: 0
   m_Name: Mountains 03
   m_TagString: Untagged
@@ -1026,11 +1083,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1484958359}
-  - {fileID: 2048038699}
-  - {fileID: 759505470}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493903989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493903987}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.6
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &498383113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,12 +1238,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556072843}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 27.59, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.489998, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 326877204}
-  m_RootOrder: 2
+  m_Father: {fileID: 416673665}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &556072845
 SpriteRenderer:
@@ -1528,6 +1597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755906741}
   - component: {fileID: 755906742}
+  - component: {fileID: 755906743}
   m_Layer: 0
   m_Name: Mountain 02 L
   m_TagString: Untagged
@@ -1545,7 +1615,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -28.6, y: -4.43, z: 0.19226563}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1956352962}
+  - {fileID: 1519779704}
   m_Father: {fileID: 1630865021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1599,6 +1671,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &755906743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755906740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.7
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &759505469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,12 +1709,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759505469}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 27.57, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.41, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 493903988}
-  m_RootOrder: 2
+  m_Father: {fileID: 1484958359}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &759505471
 SpriteRenderer:
@@ -1689,6 +1775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777861297}
+  - component: {fileID: 777861298}
   m_Layer: 0
   m_Name: Mountains 05 Trees
   m_TagString: Untagged
@@ -1708,11 +1795,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1825889498}
-  - {fileID: 1697945768}
-  - {fileID: 1303287025}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777861298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777861296}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.3
+  cam: {fileID: 3673421617640979143}
 --- !u!4 &802711974
 Transform:
   m_ObjectHideFlags: 0
@@ -1889,6 +1988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117155376}
   - component: {fileID: 1117155377}
+  - component: {fileID: 1117155378}
   m_Layer: 0
   m_Name: Mountain 01 snow L
   m_TagString: Untagged
@@ -1906,7 +2006,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -28.8, y: -7.97, z: 0.19226563}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1145712056}
+  - {fileID: 2096908219}
   m_Father: {fileID: 248917701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1960,6 +2062,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1117155378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117155375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.8
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &1145712055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,12 +2100,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145712055}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6509311, y: -7.97, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -28.149069, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 248917701}
-  m_RootOrder: 1
+  m_Father: {fileID: 1117155376}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1145712057
 SpriteRenderer:
@@ -2571,12 +2687,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303287024}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 27.5, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.41, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 777861297}
-  m_RootOrder: 2
+  m_Father: {fileID: 1825889498}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1303287026
 SpriteRenderer:
@@ -2941,6 +3057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484958359}
   - component: {fileID: 1484958360}
+  - component: {fileID: 1484958361}
   m_Layer: 0
   m_Name: Mountain 03 L
   m_TagString: Untagged
@@ -2958,7 +3075,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -28.84, y: -4.8873124, z: 0.19226563}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2048038699}
+  - {fileID: 759505470}
   m_Father: {fileID: 493903988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -3012,6 +3131,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1484958361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484958358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.5
+  cam: {fileID: 3673421617640979143}
 --- !u!1001 &1491193956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3287,12 +3420,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519779703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.43, y: -4.43, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 56.03, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1630865021}
-  m_RootOrder: 2
+  m_Father: {fileID: 755906741}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1519779705
 SpriteRenderer:
@@ -3562,6 +3695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630865021}
+  - component: {fileID: 1630865022}
   m_Layer: 0
   m_Name: Mountains 02
   m_TagString: Untagged
@@ -3581,11 +3715,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 755906741}
-  - {fileID: 1956352962}
-  - {fileID: 1519779704}
   m_Father: {fileID: 1991907632}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630865022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630865020}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.7
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &1673129440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682126577}
   - component: {fileID: 1682126576}
+  - component: {fileID: 1682126578}
   m_Layer: 16
   m_Name: Foreground black R
   m_TagString: Untagged
@@ -3693,10 +3840,26 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 24.460896, y: 1.1466534, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1758465873}
+  - {fileID: 2099762419}
   m_Father: {fileID: 362610753}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1682126578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682126575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: -0.1
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &1697945767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,12 +3884,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697945767}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6509311, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -28.25907, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 777861297}
-  m_RootOrder: 1
+  m_Father: {fileID: 1825889498}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1697945769
 SpriteRenderer:
@@ -3802,12 +3965,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715252287}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6509311, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -28.24907, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 326877204}
-  m_RootOrder: 1
+  m_Father: {fileID: 416673665}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1715252289
 SpriteRenderer:
@@ -4147,12 +4310,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758465871}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4391031, y: 1.1466534, z: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 27.899998, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 362610753}
-  m_RootOrder: 1
+  m_Father: {fileID: 1682126577}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782337517
 GameObject:
@@ -4245,6 +4408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825889498}
   - component: {fileID: 1825889499}
+  - component: {fileID: 1825889500}
   m_Layer: 0
   m_Name: Mountains05 Trees L
   m_TagString: Untagged
@@ -4262,7 +4426,9 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -28.91, y: -4.8873124, z: 0.19226563}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1697945768}
+  - {fileID: 1303287025}
   m_Father: {fileID: 777861297}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -4316,6 +4482,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1825889500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825889497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e515637d69cce4a875cb30a4c1951e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxAmount: 0.1
+  cam: {fileID: 3673421617640979143}
 --- !u!1 &1836185457
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,11 +4631,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956352961}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.6509311, y: -4.43, z: 0.19226563}
+  m_LocalPosition: {x: 27.94907, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1630865021}
-  m_RootOrder: 1
+  m_Father: {fileID: 755906741}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1956352963
 SpriteRenderer:
@@ -4578,8 +4758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RippleMaterial: {fileID: 2100000, guid: 050a7dfb724b84443a09e6d1226c675b, type: 2}
-  MaxAmount: 20
-  Friction: 0.9
+  MaxAmount: 10
+  Friction: 0.76
 --- !u!1 &1991907631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,12 +5051,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048038698}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6509311, y: -4.8873124, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -28.18907, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 493903988}
-  m_RootOrder: 1
+  m_Father: {fileID: 1484958359}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2048038700
 SpriteRenderer:
@@ -5205,12 +5385,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096908218}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 27.63, y: -7.97, z: 0.19226563}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.43, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 248917701}
-  m_RootOrder: 2
+  m_Father: {fileID: 1117155376}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &2096908220
 SpriteRenderer:
@@ -5336,12 +5516,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099762417}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -30.239103, y: 1.1466534, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 54.699997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 362610753}
-  m_RootOrder: 2
+  m_Father: {fileID: 1682126577}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &203709306461256409
 GameObject:
@@ -16426,6 +16606,8 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: -414224307
     m_ParentHash: 756556552
+  - m_Hash: -1207658483
+    m_ParentHash: 756556552
 --- !u!1 &7821576792588404417
 GameObject:
   m_ObjectHideFlags: 0
@@ -16467,12 +16649,12 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.26
-  m_DeadZoneHeight: 0.7753701
+  m_DeadZoneWidth: 0.11
+  m_DeadZoneHeight: 0.95
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneHeight: 0.95
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -16812,6 +16994,7 @@ MonoBehaviour:
   jumpForce: 40
   climbSpeed: 12
   jumpMultiplier: 1
+  isHighJumping: 0
   myBodyCollider: {fileID: 8536762367991845935}
   myFeetCollider: {fileID: 1970339882}
   footsteps: {fileID: 5163779893834226426}
@@ -16819,7 +17002,6 @@ MonoBehaviour:
   dieEffect: {fileID: 8042892580568621076, guid: 64bf80f5ff9a6ca44b973330be865b97,
     type: 3}
   deathKick: {x: 50, y: 50}
-  isHighJumping: 0
 --- !u!61 &8536762367991845935
 BoxCollider2D:
   m_ObjectHideFlags: 0
