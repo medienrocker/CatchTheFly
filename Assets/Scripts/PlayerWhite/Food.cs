@@ -5,7 +5,7 @@ public class Food : MonoBehaviour {
 	//[SerializeField] Transform startPoint;
 	[SerializeField] GameObject foodExplosion;
 	[SerializeField] GameObject[] bloodSplashes;
-	[SerializeField] float YOffset = 0f;
+	//[SerializeField] float YOffset = 0f;
 
 	RipplePostProcessor camRipple;
 
@@ -31,6 +31,12 @@ public class Food : MonoBehaviour {
 			//var splashPosition = new Vector3(transform.position.x, transform.position.y + YOffset, transform.position.z);
 			//Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length)], splashPosition, Quaternion.identity);
 			Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length)], transform.position, Quaternion.identity);
+
+			// Play explosion SFX
+			string[] SFX = new string[] { "Enemy Explosion 1", "Enemy Explosion 2" };
+			string randomExplosionSFX = SFX[Random.Range(0, SFX.Length)];
+			AudioManager.instance.Play(randomExplosionSFX);
+
 			camRipple.RippleEffect();
 			//transform.position = startPoint.transform.position;
 			Destroy(gameObject);

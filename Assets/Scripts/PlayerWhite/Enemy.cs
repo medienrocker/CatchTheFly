@@ -20,9 +20,19 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Update() {
+		Die();
+	}
+
+	void Die() {
 		if (enemyHealth <= 0) {
 			Instantiate(bloodSplashes[Random.Range(0, bloodSplashes.Length - 1)], transform.position, Quaternion.identity);
 			Instantiate(contactExplosion, transform.position, Quaternion.identity);
+
+			// Play explosion SFX
+			string [] SFX = new string[] { "Enemy Explosion 1", "Enemy Explosion 2" };
+			string randomExplosionSFX = SFX[Random.Range(0, SFX.Length)];
+			AudioManager.instance.Play(randomExplosionSFX);
+
 			camRipple.RippleEffect();
 			//transform.position = startPoint.transform.position;
 			Destroy(gameObject);
@@ -41,6 +51,10 @@ public class Enemy : MonoBehaviour {
 		if (hurtPlayerCollider.IsTouchingLayers(LayerMask.GetMask("Player"))) {
 			//Instantiate(contactExplosion, transform.position, Quaternion.identity); // should be hurtPlayerEffect = to Do!!
 			//camRipple.RippleEffect();
+
+			// PLAY 'Hit Player Sound'
+			AudioManager.instance.Play("Hit Player");
+
 			transform.position = new Vector3(transform.position.x + 2f, transform.position.y, transform.position.z);
 			Debug.Log("Hit Player!");
 		}

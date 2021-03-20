@@ -121,6 +121,8 @@ public class Player : MonoBehaviour {
 		if (Input.GetButtonDown("Jump")) {
 			Vector2 jumpVelocityToAdd = new Vector2(0f, jumpForce * jumpMultiplier);
 			myRigidbody2D.velocity += jumpVelocityToAdd;
+			AudioManager.instance.Play("Jump Sound");
+			//GetComponent<AudioSource>().Play();
 		}
 		isJumping = false;
 		myAnimator.SetBool("isJumping", isJumping);
@@ -132,6 +134,9 @@ public class Player : MonoBehaviour {
 				myAnimator.SetBool("isRunning", false);
 				myAnimator.SetBool("isCrouching", true);
 				myRigidbody2D.velocity = Vector2.zero;
+			}
+			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+				AudioManager.instance.PlayOneShot("Crouch");
 			}
 		}
 
