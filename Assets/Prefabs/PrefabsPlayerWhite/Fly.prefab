@@ -118,9 +118,7 @@ MonoBehaviour:
   - {fileID: 4377252086245730677, guid: 65c1498088913f64ba49d4d19f2b33e8, type: 3}
   - {fileID: 640864881950789482, guid: 8791091812b0e80488100b121003336a, type: 3}
   - {fileID: 918471210463538679, guid: fc43615153197a44c9eba6646bb9b3a7, type: 3}
-  clips:
-  - {fileID: 8300000, guid: af9bd604b3d12394789f227108833e8b, type: 3}
-  - {fileID: 8300000, guid: 565fd92a61022bc4a98cf33209c57881, type: 3}
+  pointsToGive: 2
 --- !u!70 &2072287125756491124
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

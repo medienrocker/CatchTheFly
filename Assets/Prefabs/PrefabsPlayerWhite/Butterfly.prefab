@@ -175,6 +175,4 @@ MonoBehaviour:
   - {fileID: 4377252086245730677, guid: 5266d12880911834f8d12d255fffc16f, type: 3}
   - {fileID: 640864881950789482, guid: ba020ce314569dd4a822e0660473e121, type: 3}
   - {fileID: 918471210463538679, guid: eebb2fbdd16370a4ba208c29cd8f5037, type: 3}
-  clips:
-  - {fileID: 8300000, guid: af9bd604b3d12394789f227108833e8b, type: 3}
-  - {fileID: 8300000, guid: 565fd92a61022bc4a98cf33209c57881, type: 3}
+  pointsToGive: 10

@@ -2,10 +2,10 @@
 
 public class Food : MonoBehaviour {
 
-	//[SerializeField] Transform startPoint;
 	[SerializeField] GameObject foodExplosion;
 	[SerializeField] GameObject[] bloodSplashes;
-	//[SerializeField] float YOffset = 0f;
+
+	[SerializeField] int pointsToGive;
 
 	RipplePostProcessor camRipple;
 
@@ -38,7 +38,9 @@ public class Food : MonoBehaviour {
 			AudioManager.instance.Play(randomExplosionSFX);
 
 			camRipple.RippleEffect();
-			//transform.position = startPoint.transform.position;
+
+			FindObjectOfType<GameStats>().AddPoints(pointsToGive);
+
 			Destroy(gameObject);
 		}
 		if (collision.gameObject.tag == "End") {

@@ -6,12 +6,8 @@ public class FloatingNumbers : MonoBehaviour {
 	[SerializeField] public int damageNumber;
 	[SerializeField] Text displayNumber;
 
-	void Start() {
-
-	}
-
 	void Update() {
-		displayNumber.text = damageNumber.ToString();
+		displayNumber.text = "+" + damageNumber.ToString();
 		transform.position = new Vector3(
 			transform.position.x, 
 			transform.position.y + (moveSpeed * Time.deltaTime), 
