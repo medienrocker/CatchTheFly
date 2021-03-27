@@ -19,10 +19,13 @@ public class Player : MonoBehaviour {
 	public bool isHighJumping;
 	bool isJumping;
 
+	public bool isPlayerHit;
+
 	// Caches and references
 	Rigidbody2D myRigidbody2D;
 	Animator myAnimator;
 	SpriteRenderer mySpriteRenderer;
+	Enemy enemy;
 
 	[SerializeField] BoxCollider2D myBodyCollider;
 	[SerializeField] BoxCollider2D myFeetCollider;
@@ -34,7 +37,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] ParticleSystem dieEffect;
 	[SerializeField] Vector2 deathKick = new Vector2(25, 50);
 
-	Color originalSpriteColor;
+	public Color originalSpriteColor;
 
 
 	// Messages then Methods
@@ -46,6 +49,8 @@ public class Player : MonoBehaviour {
 		myAnimator = GetComponent<Animator>();
 		myBodyCollider = GetComponent<BoxCollider2D>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
+
+		//var playerHitByEnemy = GetComponent<Enemy>().playerHitByEnemy;
 
 		originalSpriteColor = mySpriteRenderer.color;
 
@@ -65,20 +70,43 @@ public class Player : MonoBehaviour {
 		FlipPlayerSprite();
 		MakeImpactEffect();
 		//if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
-		//	Die();
+		//	
+
+		//	TakeDamage();
 		//}
+		//if (currentHealt <= 0f) {
+		//	//Die();
+		//}	
 
 		ChangeColor();
+		Debug.Log(isPlayerHit);
+
+
 	}
 
-	void ChangeColor() {
-		if (isHighJumping) {
-			mySpriteRenderer.color = Color.blue;
+	public void ChangeColor() {
+		if (isHighJumping && !isPlayerHit) {
+			mySpriteRenderer.color = new Color(0f, 0f, 1f, 1f);
+		}
+		else if (isPlayerHit) {
+			mySpriteRenderer.color = new Color(1f, 0f, 0f, 1f);
+		}
+		else if (isHighJumping && isPlayerHit) {
+			mySpriteRenderer.color = new Color(1f, 0f, 0f, 1f);
 		}
 		else {
 			mySpriteRenderer.color = originalSpriteColor;
 		}
 	}
+
+	//public void ChangeColor(bool condition, float r, float g, float b, float alpha) {
+	//	if (condition) {
+	//		mySpriteRenderer.color = new Color(r, g, b, alpha);
+	//	}
+	//	else {
+	//		mySpriteRenderer.color = originalSpriteColor;
+	//	}
+	//}
 
 	void Run() {
 		float moveX = Input.GetAxisRaw("Horizontal");
@@ -122,8 +150,8 @@ public class Player : MonoBehaviour {
 			Vector2 jumpVelocityToAdd = new Vector2(0f, jumpForce * jumpMultiplier);
 			myRigidbody2D.velocity += jumpVelocityToAdd;
 			AudioManager.instance.Play("Jump Sound");
-			//GetComponent<AudioSource>().Play();
 		}
+
 		isJumping = false;
 		myAnimator.SetBool("isJumping", isJumping);
 	}
@@ -160,6 +188,14 @@ public class Player : MonoBehaviour {
 		yield return new WaitForSeconds(secondsToReload);
 		SceneManager.LoadScene(0);
 	}
+
+	//IEnumerator ChangePlayerColorWhenHit(bool condition, float r, float g, float b, float alpha) {
+	//		if (condition) {
+	//			mySpriteRenderer.color = new Color(r, g, b, alpha);
+	//			yield return new WaitForSeconds(0.2f);
+	//			mySpriteRenderer.color = originalSpriteColor;
+	//		}
+	//}
 
 	void FlipPlayerSprite() {
 		bool hasHorizontalSpeed = Mathf.Abs(myRigidbody2D.velocity.x) > Mathf.Epsilon; // means > 0

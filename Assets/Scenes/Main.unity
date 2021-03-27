@@ -17517,6 +17517,7 @@ MonoBehaviour:
   climbSpeed: 12
   jumpMultiplier: 1
   isHighJumping: 0
+  isPlayerHit: 0
   myBodyCollider: {fileID: 8536762367991845935}
   myFeetCollider: {fileID: 1970339882}
   footsteps: {fileID: 5163779893834226426}
@@ -17524,6 +17525,7 @@ MonoBehaviour:
   dieEffect: {fileID: 8042892580568621076, guid: 64bf80f5ff9a6ca44b973330be865b97,
     type: 3}
   deathKick: {x: 50, y: 50}
+  originalSpriteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &8536762367991845935
 BoxCollider2D:
   m_ObjectHideFlags: 0

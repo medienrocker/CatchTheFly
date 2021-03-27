@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
@@ -52,14 +53,16 @@ public class Enemy : MonoBehaviour {
 			//Instantiate(contactExplosion, transform.position, Quaternion.identity); // should be hurtPlayerEffect = to Do!!
 			//camRipple.RippleEffect();
 
+			StartCoroutine(IsPlayerHit(collision));
+
 			// PLAY 'Hit Player Sound'
 			AudioManager.instance.Play("Hit Player");
 
 			transform.position = new Vector3(transform.position.x + 2f, transform.position.y, transform.position.z);
-			Debug.Log("Hit Player!");
+			//Debug.Log("Hit Player!");
 		}
 		else if (hurtEnemyCollider.IsTouchingLayers(LayerMask.GetMask("Player"))) {
-			Debug.Log("Hit Enemy!");
+			//Debug.Log("Hit Enemy!");
 			TakeDamage(10);
 		}
 		if (collision.gameObject.tag == "End") {
@@ -67,7 +70,15 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	IEnumerator IsPlayerHit(GameObject player) {
+		player.gameObject.GetComponent<Player>().isPlayerHit = true;
+		yield return new WaitForSeconds(0.1f);
+		player.gameObject.GetComponent<Player>().isPlayerHit = false;
+	}
+
 	public void TakeDamage(int damage) {
 		enemyHealth -= damage;
 	}
+
+
 }
