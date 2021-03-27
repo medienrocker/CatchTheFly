@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public int enemyHealth = 10;
+	public int damageToGive { get { return damageToGive = 1; } private set { return; } }
 	//public Transform startPoint;
 	[SerializeField] GameObject contactExplosion;
 	[SerializeField] GameObject[] bloodSplashes;

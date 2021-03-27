@@ -25,6 +25,8 @@ public class Player : MonoBehaviour {
 	Rigidbody2D myRigidbody2D;
 	Animator myAnimator;
 	SpriteRenderer mySpriteRenderer;
+
+	PlayerHealthManager playerHealth;
 	Enemy enemy;
 
 	[SerializeField] BoxCollider2D myBodyCollider;
@@ -37,20 +39,19 @@ public class Player : MonoBehaviour {
 	[SerializeField] ParticleSystem dieEffect;
 	[SerializeField] Vector2 deathKick = new Vector2(25, 50);
 
-	public Color originalSpriteColor;
+	Color originalSpriteColor;
 
 
 	// Messages then Methods
 	void Start() {
-		//isAlive = true;
 		if (!isAlive) {return;}
 
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
 		myBodyCollider = GetComponent<BoxCollider2D>();
 		mySpriteRenderer = GetComponent<SpriteRenderer>();
-
-		//var playerHitByEnemy = GetComponent<Enemy>().playerHitByEnemy;
+		playerHealth = GetComponent<PlayerHealthManager>();
+		enemy = GetComponent<Enemy>();
 
 		originalSpriteColor = mySpriteRenderer.color;
 
@@ -69,22 +70,18 @@ public class Player : MonoBehaviour {
 		Crouch();
 		FlipPlayerSprite();
 		MakeImpactEffect();
-		//if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
-		//	
+		ChangePlayerColorWhenHit();
+		HurtPlayer();
 
-		//	TakeDamage();
-		//}
+
 		//if (currentHealt <= 0f) {
 		//	//Die();
 		//}	
 
-		ChangeColor();
-		Debug.Log(isPlayerHit);
-
 
 	}
 
-	public void ChangeColor() {
+	public void ChangePlayerColorWhenHit() {
 		if (isHighJumping && !isPlayerHit) {
 			mySpriteRenderer.color = new Color(0f, 0f, 1f, 1f);
 		}
@@ -171,6 +168,17 @@ public class Player : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) {
 			myAnimator.SetBool("isCrouching", false);
 		}
+	}
+
+	public void HurtPlayer() {
+		if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy"))) {
+			myAnimator.SetBool("isPlayerHit", true);
+		}
+		else {
+			myAnimator.SetBool("isPlayerHit", false);
+			return;
+		}
+		//playerHealth.TakeHit(enemy.damageToGive);
 	}
 
 	public void Die() {
